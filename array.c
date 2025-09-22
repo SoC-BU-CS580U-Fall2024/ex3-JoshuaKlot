@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <string.h>
-char my_array[] = {'l','m','f','a','o','\0'};
-char *ptr;
 
-int main(void)
-{
-    int i;
-    ptr = &my_array[0];     /* point our pointer to the first
-                                      element of the array */
-    printf("\n\n");
-    for (i = 0; i < 6; i++)
-    {
-      printf("my_array[%d] = %c\t",i,my_array[i]);   /*<-- A */
-      printf("ptr + %d = %3d\n",i, *(ptr + i));        /*<-- B */
+int main() {
+    float arr1[25];
+    int i, n;
+
+    printf("Input number of elements to store:");
+    scanf("%d", &n);
+
+    printf(" Input %d elements(float) in array:\n", n);
+    for (i = 0; i < n; i++) {
+        printf(" Element %d: ", i);
+        scanf("%f", arr1 + i);
+    }
+
+    printf("Elements entered: \n");
+    for (i = 0; i < n; i++) {
+        printf("Element %d: %.2f \n", i, *(arr1 + i));
     }
     return 0;
 }
